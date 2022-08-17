@@ -5,3 +5,4 @@ exports.ensureAuthenticated = (req, res, next) => {
     res.redirect('/auth/signin/form');
   }
 }
+
