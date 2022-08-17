@@ -8,11 +8,11 @@ const env = require(`../environnement/${process.env.NODE_ENV}`);
 
 
 const httpServer = http.createServer((req, res) => {
-    res.writeHead(301, {Location: `https://${req.headers.host.split(":")[0] + ":" + env.portHttps}${req.url}`});
+    res.writeHead(301, {Location: `https://${req.headers.host}${req.url}`});
     res.end();
-}).listen(env.portHttp)
+}).listen(12345)
 
 const httpsServeur = https.createServer({
     key: fs.readFileSync(env.key),
     cert: fs.readFileSync(env.cert)
-}, app).listen(env.Https);
+}, app).listen(443);

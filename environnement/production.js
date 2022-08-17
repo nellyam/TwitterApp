@@ -3,6 +3,4 @@ module.exports = {
     "dbUrl": "mongodb+srv://nelly:1988@cluster0.v2ixo.mongodb.net/twitter?retryWrites=true&w=majority",
     "cert": "/etc/letsencrypt/live/nelly-projects.fr/fullchain.pem",
     "key": "/etc/letsencrypt/live/nelly-projects.fr/privkey.pem",
-    portHttp: 12345,
-    portHttps: 443
 };
