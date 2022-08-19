@@ -20,3 +20,11 @@ exports.getTweet = (tweetId) => {
 exports.updateTweet = (tweetId, tweet) => {
   return Tweet.findByIdAndUpdate(tweetId, { $set: tweet }, { runValidators: true });
 }
+
+exports.getCurrentUserTweetsWithFollowing =(user) => {
+  return Tweet.find({ author: { $in: [...user.following, user._id ]}}).exec();
+}
+
+exports.getUserTweetsFromUsername =(authorId) => {
+  return Tweet.find({ author: authorId}).exec();
+}
