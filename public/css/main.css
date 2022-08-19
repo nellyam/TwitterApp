@@ -6,7 +6,8 @@
 .profile-container {
   width:30%;
   max-width:300px;
-  color:#657786;
+  /*color:#657786;*/
+  color:#bd0ca8;
 }
 
 .navbar {
