@@ -5,8 +5,9 @@ if tweets
         div(class="d-flex flex-row justify-content-center")
           img(width="30" height="30" class="pr-2" src=tweet.author.avatar)
           span(class="flex-fill")= tweet.author.username
-          div(class="d-flex flex-row justify-content-center")
-            a(class="fa-solid fa-pen-to-square pr-2 text-success cursor-pointer" href="/tweets/edit/" + tweet._id)
-            i(class="fa-solid fa-circle-minus text-danger cursor-pointer" tweetid=tweet._id)
+          if editable && tweet.author._id.toString() === currentUser._id.toString()
+            div(class="d-flex flex-row justify-content-center")
+              a(class="fa-solid fa-pen-to-square pr-2 text-success cursor-pointer" href="/tweets/edit/" + tweet._id)
+              i(class="fa-solid fa-circle-minus text-danger cursor-pointer" tweetid=tweet._id)
         div= tweet.content
           
