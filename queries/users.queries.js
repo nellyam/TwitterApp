@@ -23,3 +23,7 @@ exports.findUserPerEmail = (email) => {
 exports.findUserPerId = (id) => {
   return User.findById(id).exec();
 }
+
+exports.findUserPerUsername = (username) => {
+  return User.findOne({ username}).exec();
+}
