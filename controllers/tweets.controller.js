@@ -1,4 +1,4 @@
-const { getTweets, createTweet, deleteTweet, getCurrentUserTweetsWithFollowing, updateTweet } = require('../queries/tweets.queries');
+const {getTweet, getTweets, createTweet, deleteTweet, getCurrentUserTweetsWithFollowing, updateTweet } = require('../queries/tweets.queries');
 
 exports.tweetList = async (req, res, next) => {
   try {
