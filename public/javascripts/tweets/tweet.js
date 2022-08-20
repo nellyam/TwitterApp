@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 function bindTweet() {
-  const elements = document.querySelectorAll('.btn-danger');
+  const elements = document.querySelectorAll('.fa-circle-minus');
   const tweetContainer = document.querySelector('#tweet-list-container');
 
   elements.forEach( e => {
