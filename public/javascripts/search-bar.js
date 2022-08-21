@@ -12,14 +12,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
      let searchInput = document.querySelector("#search-input");
      let ref;
-     searchInput.addEventListener("input", (e) => {});
-     const value = e.target.value;
-     if(ref) {
-       clearTimeout(ref);        
-     }
+     searchInput.addEventListener("input", (e) => {
+       const value = e.target.value;
+       if(ref) {
+        clearTimeout(ref);        
+       }
 
-     ref = setTimeout(() => {
-        console.log(value);
-     }, 2000);
- 
+       ref = setTimeout(() => {
+          console.log(value);
+       }, 2000);        
+       }); 
   })
