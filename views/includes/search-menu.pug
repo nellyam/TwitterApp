@@ -1,0 +1,6 @@
+div(class="search-menu d-flex flex-column")
+if users && users.length
+  each user in users
+    div(class="d-flex flex-row align-items-center search-menu-item cursor-pointer ")
+      img(class="p-2" width="30" height="30" src=user.avatar)
+      span= user.username

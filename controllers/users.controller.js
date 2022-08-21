@@ -15,9 +15,7 @@ exports.userList = async(req, res, next) => {
   try { 
     const search = req.query.search;
     const users = await searchUsersPerUsername(search);
-    console.log({users});
-    res.json(users);
-    //res.render("includes/search-menu", {users});
+    res.render("includes/search-menu", {users});
     
   }
   catch(e) {
