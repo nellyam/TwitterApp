@@ -19,7 +19,13 @@ window.addEventListener('DOMContentLoaded', () => {
        }
 
        ref = setTimeout(() => {
-          console.log(value);
+          axios.get("/users?search=" + value)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
        }, 2000);        
        }); 
   })
