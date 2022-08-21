@@ -1,5 +1,3 @@
-const e = require("express");
-
 let menuContainer;
 
 window.addEventListener('click', () => {
