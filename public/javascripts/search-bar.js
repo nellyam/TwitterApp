@@ -6,5 +6,9 @@ window.addEventListener('click', () => {
 
 window.addEventListener('DOMContentLoaded', () => {
      menuContainer = document.querySelector("#search-menu-container");
+     menuContainer.addEventListener("click", (e) => {
+        e.stopPropagation();
+        
+     })
  
   })
