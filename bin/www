@@ -15,3 +15,4 @@ const httpsServeur = https.createServer({
     key: fs.readFileSync(env.key),
     cert: fs.readFileSync(env.cert)
 }, app).listen(env.portHttps);
+
