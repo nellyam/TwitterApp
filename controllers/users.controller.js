@@ -1,7 +1,8 @@
-const { createUser, findUserPerUsername, searchUsersPerUsername} = require('../queries/users.queries');
+const { createUser, findUserPerUsername, searchUsersPerUsername, addUserIdToCurrentUserFollowing, findUserPerId} = require('../queries/users.queries');
 const { getUserTweetsFromAuthorId } = require('../queries/tweets.queries');
 const path = require('path');
 const multer = require('multer');
+const User = require('../database/models/user.model');
 const upload = multer({ storage: multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path.join( __dirname, '../public/images/avatars'))
@@ -68,3 +69,19 @@ exports.uploadImage = [
     }
   }
 ]
+
+exports.followUser = async (req, res, next) => {
+  try {
+   const userId = req.params.userId;
+   const [, user] = await Promise.all([addUserIdToCurrentUserFollowing(req.user, userId), findUserPerId(userId)]);
+   res.redirect(`/users/${user.username}`);    
+  } catch(e) {
+    next(e);
+  }
+
+   
+}
+
+exports.UnFollowUser = async (req, res, next) => {
+  // User.findByIdAndDelete(userId).exec();
+}

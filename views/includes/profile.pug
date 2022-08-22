@@ -8,9 +8,9 @@ div(class="profile-container bg-white mr-3 d-flex flex-column")
   if currentUser._id.toString() !== user._id.toString()
     div(class="d-flex flex-row justify-content-center align-items-center")
       if currentUser.following.map(objId => objId.toString()).includes(user._id.toString())
-        a(class="btn btn-primary btn-unfollow") unfollow
+        a(class="btn btn-primary btn-unfollow" href="/users/unfollow/" + user._id) unfollow
       else   
-        a(class="btn btn-outline-primary btn-follow") follow
+        a(class="btn btn-outline-primary btn-follow" href="/users/follow/" + user._id) follow
   div(class="text-center d-flex flex-row justify-content-center align-items-center my-3")
     div(class="flex-fill")
       p
