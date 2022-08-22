@@ -5,6 +5,12 @@ div(class="profile-container bg-white mr-3 d-flex flex-column")
     img(src=currentUser.avatar class="img-fluid" id="image-profile")
   div(class="d-flex flex-row justify-content-center align-items-center my-3")
     p= `${ user.username } (${ user.local.email })`
+  if currentUser._id.toString() !== user._id.toString()
+    div(class="d-flex flex-row justify-content-center align-items-center")
+      if currentUser.following.map(objId => objId.toString()).includes(user._id.toString())
+        a(class="btn btn-primary") unfollow
+      else   
+        a(class="btn btn-outline-primary") follow
   div(class="text-center d-flex flex-row justify-content-center align-items-center my-3")
     div(class="flex-fill")
       p
