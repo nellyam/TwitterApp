@@ -77,3 +77,14 @@ body {
   background: #eee;
   transition: background 0.3s;
 }
+.btn-follow {
+  color: #007bff!important;
+  border-radius: 30px;
+  border-width: 2px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-follow:hover {
+  color: white!important;
+}
