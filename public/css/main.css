@@ -88,3 +88,9 @@ body {
 .btn-follow:hover {
   color: white!important;
 }
+
+.btn-unfollow {
+  border-radius: 30px;
+  font-weight: bold;
+}
+
