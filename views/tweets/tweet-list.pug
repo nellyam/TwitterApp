@@ -3,7 +3,7 @@ if tweets
     div(class="card tweet-element")
       div(class="card-body d-flex flex-column")
         div(class="d-flex flex-row justify-content-center")
-          img(width="30" height="30" class="pr-2" src=tweet.author.avatar)
+          img(width="30" height="30" class="pr-2" src=tweet.author.avatar id="test")
           span(class="flex-fill")= tweet.author.username
           if editable && tweet.author._id.toString() === currentUser._id.toString()
             div(class="d-flex flex-row justify-content-center")
